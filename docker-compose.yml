@@ -6,6 +6,7 @@ services:
     image: pandorafms/pandorafms-mysql:6
     container_name: pandora-mysql
     hostname: pandora-mysql
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: P@ssw0rd#1
       MYSQL_DATABASE: pandora    
@@ -23,6 +24,7 @@ services:
     image: pandorafms/pandorafms-server:6
     container_name: pandora-server
     hostname: pandora-server
+    restart: always
     environment:
       PANDORA_DB_HOST: pandora-mysql
       PANDORA_DB_NAME: pandora
@@ -40,6 +42,7 @@ services:
     image: pandorafms/pandorafms-console:6
     container_name: pandora-console
     hostname: pandora-console
+    restart: always
     ports:
       - 80:80
       - 8022:8022
